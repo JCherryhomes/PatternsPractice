@@ -11,8 +11,16 @@ package Decorator;
  * @author Jonathan
  */
 public abstract class BeverageDecorator implements IBeverage {
-    public IBeverage beverage;
+    private IBeverage beverage;
     
     @Override
     public abstract String getDescription();
+    
+    public IBeverage getBeverage(){
+        return this.beverage;
+    }
+    
+    public void setBeverage(IBeverage beverage){
+        this.beverage = beverage;
+    }
 }

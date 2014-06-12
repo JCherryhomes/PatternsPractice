@@ -7,11 +7,14 @@
 package Decorator;
 
 
-public class Water implements IBeverage {
+public class WithCherryDecorator extends BeverageDecorator {
+    public WithCherryDecorator(IBeverage beverage){
+        setBeverage(beverage);
+    }
 
     @Override
     public String getDescription() {
-        return "water";
+        return "cherry flavored " + getBeverage().getDescription();
     }
     
 }

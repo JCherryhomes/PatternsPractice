@@ -6,8 +6,7 @@
 
 package patternspractice;
 
-import Decorator.Water;
-import Decorator.WithIceDecorator;
+import Decorator.*;
 
 /**
  *
@@ -26,8 +25,8 @@ public class PatternsPractice {
         WithIceDecorator withIce = new WithIceDecorator(water);
         System.out.println(withIce.getDescription());
         
-        WithIceDecorator withIce2 = new WithIceDecorator(withIce);
-        System.out.println(withIce2.getDescription());
+        WithCherryDecorator withCherry = new WithCherryDecorator(withIce);
+        System.out.println(withCherry.getDescription());
     }
     
 }

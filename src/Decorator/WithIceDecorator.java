@@ -9,11 +9,11 @@ package Decorator;
 
 public class WithIceDecorator extends BeverageDecorator {
     public WithIceDecorator(IBeverage beverage){
-        this.beverage = beverage;
+        setBeverage(beverage);
     }
     
     @Override
     public String getDescription(){
-        return this.beverage.getDescription() + " with ice ";
+        return getBeverage().getDescription() + " with ice ";
     }
 }
