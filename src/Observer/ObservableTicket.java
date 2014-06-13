@@ -7,15 +7,13 @@
 package Observer;
 
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
  * @author Jonathan
  */
 public class ObservableTicket implements IObservable<ObservableTicket> {
-    private final ArrayList<IObserver<ObservableTicket>> observers;
+    final ArrayList<IObserver<ObservableTicket>> observers;
     private int ticketNumber;
     private String ticketName;
     
