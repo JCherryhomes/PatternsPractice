@@ -20,10 +20,13 @@ public class PatternsPractice {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        //runDecoratorPractice();
         runObservablePractice();
     }
     
+    /**
+     * Runs code that exercises the decorator classes
+     */
     public static void runDecoratorPractice(){
         Water water = new Water();
         System.out.println(water.getDescription());
@@ -35,6 +38,9 @@ public class PatternsPractice {
         System.out.println(withCherry.getDescription());
     }
     
+    /**
+     * Runs code that exercises the observer/observable classes
+     */
     public static void runObservablePractice(){
         ObservableTicket ticket = new ObservableTicket();
         TicketEmailer emailer = new TicketEmailer();
