@@ -11,7 +11,7 @@ package Observer;
  * @author Jonathan
  */
 public class TicketEmailer extends EmailObserver<ObservableTicket> {
-    private ObservableTicket ticket;
+    protected ObservableTicket ticket;
     
     @Override
     public void sendEmail() {

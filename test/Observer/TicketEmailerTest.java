@@ -8,7 +8,9 @@ package Observer;
 
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
+
+import static org.hamcrest.CoreMatchers.*;
+import static org.junit.Assert.assertThat;
 
 /**
  *
@@ -24,29 +26,21 @@ public class TicketEmailerTest {
     }
 
     /**
-     * Test of sendEmail method, of class TicketEmailer.
-     */
-    @Test
-    public void testSendEmail() {
-        System.out.println("sendEmail");
-        TicketEmailer instance = new TicketEmailer();
-        
-        instance.sendEmail();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
      * Test of update method, of class TicketEmailer.
      */
     @Test
     public void testUpdate() {
         System.out.println("update");
-        ObservableTicket value = null;
+        ObservableTicket value = new ObservableTicket();
+        value.setTicketName("Test");
+        value.setTicketNumber(2);
         TicketEmailer instance = new TicketEmailer();
+
+        value.register(instance);
+
         instance.update(value);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
+        assertThat(instance.ticket.getTicketNumber(), is(2));
     }
     
 }
