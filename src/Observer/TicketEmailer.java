@@ -15,13 +15,17 @@ public class TicketEmailer extends EmailObserver<ObservableTicket> {
     
     @Override
     public void sendEmail() {
-        System.out.println("Email sent for ticket " + ticket.getTicketNumber() + " (" + ticket.getTicketName() + ")");
+        if (ticket == null){
+            System.out.println("There is no ticket data available. Email not sent.");
+        }
+        else {
+            System.out.println("Email sent for ticket #" + ticket.getTicketNumber() + " (" + ticket.getTicketName() + ")");
+        }
     }
 
     @Override
     public void update(ObservableTicket value) {
         this.ticket = value;
         sendEmail();
-    }
-    
+    }    
 }

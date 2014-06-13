@@ -30,6 +30,7 @@ public class TicketEmailerTest {
     public void testSendEmail() {
         System.out.println("sendEmail");
         TicketEmailer instance = new TicketEmailer();
+        
         instance.sendEmail();
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
