@@ -6,9 +6,7 @@
 
 package patternspractice;
 
-import Decorator.Water;
-import Decorator.WithCherryDecorator;
-import Decorator.WithIceDecorator;
+import Decorator.*;
 import Observer.ObservableTicket;
 import Observer.TicketEmailer;
 
@@ -22,7 +20,12 @@ public class PatternsPractice {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //runDecoratorPractice();
+        System.out.println("Decorator Practice");
+        runDecoratorPractice();
+
+        System.out.println();
+
+        System.out.println("Observable Practice");
         runObservablePractice();
     }
     
@@ -30,14 +33,12 @@ public class PatternsPractice {
      * Runs code that exercises the decorator classes
      */
     public static void runDecoratorPractice(){
-        Water water = new Water();
-        System.out.println(water.getDescription());
-        
-        WithIceDecorator withIce = new WithIceDecorator(water);
-        System.out.println(withIce.getDescription());
-        
-        WithCherryDecorator withCherry = new WithCherryDecorator(withIce);
-        System.out.println(withCherry.getDescription());
+        IBeverage coffee = new HouseBlend();
+        coffee = new MochaDecorator(coffee);
+        coffee = new WhippedDecorator(coffee);
+
+        System.out.println(coffee.getDescription());
+        System.out.printf("Cost: %s%n", coffee.getCost());
     }
     
     /**

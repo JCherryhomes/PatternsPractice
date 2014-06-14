@@ -9,12 +9,17 @@ package Decorator;
 
 public class WithCherryDecorator extends BeverageDecorator {
     public WithCherryDecorator(IBeverage beverage){
-        setBeverage(beverage);
+        super(beverage);
     }
 
     @Override
     public String getDescription() {
-        return "cherry flavored " + getBeverage().getDescription();
+        return "cherry flavored " + beverage.getDescription();
     }
-    
+
+    @Override
+    public double getCost() {
+        return .10;
+    }
+
 }

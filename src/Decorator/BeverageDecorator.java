@@ -1,26 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package Decorator;
 
 /**
- *
- * @author Jonathan
+ * Created by Jonathan on 6/14/2014.
  */
 public abstract class BeverageDecorator implements IBeverage {
-    private IBeverage beverage;
-    
-    @Override
-    public abstract String getDescription();
-    
-    public IBeverage getBeverage(){
-        return this.beverage;
-    }
-    
-    public void setBeverage(IBeverage beverage){
+    IBeverage beverage;
+
+    public BeverageDecorator(IBeverage beverage){
         this.beverage = beverage;
     }
 }

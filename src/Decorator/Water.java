@@ -13,5 +13,10 @@ public class Water implements IBeverage {
     public String getDescription() {
         return "water";
     }
-    
+
+    @Override
+    public double getCost() {
+        return .89;
+    }
+
 }

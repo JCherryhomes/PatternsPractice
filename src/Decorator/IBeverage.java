@@ -11,9 +11,7 @@ package Decorator;
  * @author Jonathan
  */
 public interface IBeverage {
-    /**
-     *
-     * @return The description of the drink
-     */
     String getDescription();
+
+    double getCost();
 }
