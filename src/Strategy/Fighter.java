@@ -11,14 +11,20 @@ public class Fighter extends Character {
     }
 
     @Override
-    public void Attack() {
+    public void Attack(Character target) {
         if (target == null){
             System.out.println("You have no target");
             return;
         }
 
+        if (health <= 0){
+            System.out.println(name + " cannot attack because (s)he is dead.");
+            return;
+        }
+
         target.health = target.health - weapon.getDamage();
         System.out.printf("%s did %d damage.%n", name, weapon.getDamage());
+        System.out.println("Target Health: " + target.health);
 
         if (target.health <= 0){
             System.out.println("Target is dead");

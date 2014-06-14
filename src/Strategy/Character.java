@@ -6,16 +6,11 @@ package Strategy;
 public abstract class Character {
     IWeapon weapon;
     int health;
-    Character target;
     String name;
 
-    public abstract void Attack();
+    public abstract void Attack(Character target);
 
     public void changeWeapon(IWeapon weapon){
         this.weapon = weapon;
-    }
-
-    public void setTarget(Character target){
-        this.target = target;
     }
 }

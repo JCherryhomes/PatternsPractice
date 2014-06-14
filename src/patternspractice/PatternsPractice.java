@@ -7,8 +7,7 @@
 package patternspractice;
 
 import Decorator.*;
-import Observer.ObservableTicket;
-import Observer.TicketEmailer;
+import Observer.*;
 import Strategy.*;
 
 /**
@@ -69,17 +68,15 @@ public class PatternsPractice {
         IWeapon axe = new Axe();
 
         Strategy.Character hero = new Fighter(50, sword, "Fred");
-        Strategy.Character target = new Fighter(50, axe, "Sam");
-        hero.setTarget(target);
-        target.setTarget(hero);
+        Strategy.Character target = new Fighter(8, axe, "Sam");
 
-        hero.Attack();
-        target.Attack();
+        hero.Attack(target);
+        target.Attack(hero);
 
         System.out.println("Fred equips an axe.");
         hero.changeWeapon(axe);
 
-        hero.Attack();
-        target.Attack();
+        hero.Attack(target);
+        target.Attack(hero);
     }
 }
