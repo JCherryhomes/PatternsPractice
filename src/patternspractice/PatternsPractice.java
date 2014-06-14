@@ -6,7 +6,9 @@
 
 package patternspractice;
 
-import Decorator.*;
+import Decorator.Water;
+import Decorator.WithCherryDecorator;
+import Decorator.WithIceDecorator;
 import Observer.ObservableTicket;
 import Observer.TicketEmailer;
 
