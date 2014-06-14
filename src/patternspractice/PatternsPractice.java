@@ -9,6 +9,7 @@ package patternspractice;
 import Decorator.*;
 import Observer.ObservableTicket;
 import Observer.TicketEmailer;
+import Strategy.*;
 
 /**
  *
@@ -27,6 +28,11 @@ public class PatternsPractice {
 
         System.out.println("Observable Practice");
         runObservablePractice();
+
+        System.out.println();
+
+        System.out.println("Strategy Practice");
+        runStrategyPractice();
     }
     
     /**
@@ -53,5 +59,27 @@ public class PatternsPractice {
         ticket.setTicketName("Ticket One");
         
         ticket.saveTicket();
+    }
+
+    /**
+     * Runs code that exercises the strategy classes
+     */
+    public static void runStrategyPractice(){
+        IWeapon sword = new Sword();
+        IWeapon axe = new Axe();
+
+        Strategy.Character hero = new Fighter(50, sword, "Fred");
+        Strategy.Character target = new Fighter(50, axe, "Sam");
+        hero.setTarget(target);
+        target.setTarget(hero);
+
+        hero.Attack();
+        target.Attack();
+
+        System.out.println("Fred equips an axe.");
+        hero.changeWeapon(axe);
+
+        hero.Attack();
+        target.Attack();
     }
 }
